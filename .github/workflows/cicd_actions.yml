@@ -36,9 +36,10 @@ jobs:
       - name: Set var
         id: set-var
         run: |
+          IMAGE_TAG=$(cat VERSION 2>/dev/null || echo "latest")
           echo ::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}
           echo ::set-output name=ECR_REPOSITORY::cicd-test
-          echo ::set-output name=IMAGE_TAG::$(cat VERSION)
+          echo ::set-output name=IMAGE_TAG::$IMAGE_TAG
 
       - name: Docker image Build
         id: build-image
