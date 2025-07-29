@@ -45,8 +45,8 @@ jobs:
         id: build-image
         run: |
           docker build \
-            -f /home/ec2-user/cicd_dev/docker/nginx/Dockerfile . \
-            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }} .
+            -f docker/nginx/Dockerfile  \
+            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }} docker/nginx/ 
 
       - name: Docker image Push
         id: push-image
