@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
