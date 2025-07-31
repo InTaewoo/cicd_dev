@@ -87,4 +87,4 @@ jobs:
           git config --global user.email "InTaewoo@github.com"
           git config --global user.name "Intaewoo"
           git commit -am "Update image tag"
-          git push -u origin main
+          git push -u origin master
