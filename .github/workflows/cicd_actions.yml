@@ -9,7 +9,7 @@ on:
     #  - 'README.md'
     paths:
       - "docker/nginx/Dockerfile"
-      - "dockebr/nginx/index.html"
+      - "docker/nginx/index.html"
   pull_request:
     branches: [ master ]
 
