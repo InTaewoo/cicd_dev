@@ -3,12 +3,9 @@ name: CI/CD
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - '.gitignore'
-      - '.dockerignore'
-      - 'README.md'
-#    paths:
-#      - '**.py'
+    paths:
+      - "docker/nginx/Dockerfile"
+      - "docker/nginx/index.html"
   pull_request:
     branches: [ master ]
 
@@ -16,7 +13,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     outputs:
-      IMAGE_TAG: ${{ steps.set-var.outputs.IMAGE_TAG }}
+      IMAGE_TAG: ${{ steps.image-info.outputs.IMAGE_TAG }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -41,8 +38,10 @@ jobs:
           echo "::set-output name=version::$VERSION"
 
       - name: Set var
-        id: set-var
+        id: image-info
         env: 
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: cicd-test
           IMAGE_TAG: ${{ steps.image.outputs.version }}
         run: |
           echo ::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}
@@ -54,9 +53,41 @@ jobs:
         run: |
           docker build \
             -f docker/nginx/Dockerfile  \
-            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }} docker/nginx/ 
+            -t ${{ steps.image-info.outputs.ECR_REGISTRY }}/${{ steps.image-info.outputs.ECR_REPOSITORY }}:${{ steps.image-info.outputs.IMAGE_TAG }} docker/nginx/ 
 
       - name: Docker image Push
         id: push-image
         run: |
-          docker push ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
+          docker push ${{ steps.image-info.outputs.ECR_REGISTRY }}/${{ steps.image-info.outputs.ECR_REPOSITORY }}:${{ steps.image-info.outputs.IMAGE_TAG }}
+
+  cd:
+    needs: [ci]
+    runs-on: ubuntu-latest
+    steps:   
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+
+      - name: Checkout kustomize repository
+        uses: actions/checkout@v2
+        with:
+          repository: InTaewoo/cicd_config
+          ref: master
+          token: ${{ secrets.ACTION_TOKEN }}
+          path: cicd_config
+
+      - name: Update Kubernetes resources
+        run: |
+          echo ${{ steps.login-ecr.outputs.registry }}
+          echo ${{ steps.image-info.outputs.ecr_repository }}
+          echo ${{ steps.image-info.outputs.image_tag }}
+          cd cicd_config/overlays/dev/
+          kustomize edit set image ${{ steps.login-ecr.outputs.registry}}/${{ steps.image-info.outputs.ecr_repository }}=${{ steps.login-ecr.outputs.registry}}/${{ steps.image-info.outputs.ecr_repository }}:${{ steps.image-info.outputs.image_tag }}
+          cat kustomization.yaml
+
+      - name: Commit files
+        run: |
+          cd cicd_config
+          git config --global user.email "InTaewoo@github.com"
+          git config --global user.name "Intaewoo"
+          git commit -am "Update image tag"
+          git push -u origin master

@@ -3,9 +3,9 @@ name: CI/CD
 on:
   push:
     branches: [ master ]
-    paths:
-      - "docker/nginx/Dockerfile"
-      - "docker/nginx/index.html"
+   # paths:
+   #   - "docker/nginx/Dockerfile"
+   #   - "docker/nginx/index.html"
   pull_request:
     branches: [ master ]
 
