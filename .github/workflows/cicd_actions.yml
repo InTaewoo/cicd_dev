@@ -16,7 +16,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     outputs:
-      IMAGE_TAG: ${{ steps.set-var.outputs.IMAGE_TAG }}
+      IMAGE_TAG: ${{ steps.image-info.outputs.IMAGE_TAG }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -56,12 +56,12 @@ jobs:
         run: |
           docker build \
             -f docker/nginx/Dockerfile  \
-            -t ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }} docker/nginx/ 
+            -t ${{ steps.image-info.outputs.ECR_REGISTRY }}/${{ steps.image-info.outputs.ECR_REPOSITORY }}:${{ steps.image-info.outputs.IMAGE_TAG }} docker/nginx/ 
 
       - name: Docker image Push
         id: push-image
         run: |
-          docker push ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
+          docker push ${{ steps.image-info.outputs.ECR_REGISTRY }}/${{ steps.image-info.outputs.ECR_REPOSITORY }}:${{ steps.image-info.outputs.IMAGE_TAG }}
 
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
