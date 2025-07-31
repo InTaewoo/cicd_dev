@@ -41,7 +41,7 @@ jobs:
           echo "::set-output name=version::$VERSION"
 
       - name: Set var
-        id: set-var
+        id: image-info
         env: 
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: cicd-test
