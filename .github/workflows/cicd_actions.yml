@@ -43,6 +43,8 @@ jobs:
       - name: Set var
         id: set-var
         env: 
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: cicd-test
           IMAGE_TAG: ${{ steps.image.outputs.version }}
         run: |
           echo ::set-output name=ECR_REGISTRY::${{ steps.login-ecr.outputs.registry }}
