@@ -3,10 +3,10 @@ name: CI/CD
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - '.gitignore'
-      - '.dockerignore'
-      - 'README.md'
+    #paths-ignore:
+    #  - '.gitignore'
+    #  - '.dockerignore'
+    #  - 'README.md'
     paths:
       - "docker/nginx/Dockerfile"
       - "dockebr/nginx/index.html"
