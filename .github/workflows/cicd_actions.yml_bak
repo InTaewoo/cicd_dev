@@ -60,31 +60,3 @@ jobs:
         id: push-image
         run: |
           docker push ${{ steps.set-var.outputs.ECR_REGISTRY }}/${{ steps.set-var.outputs.ECR_REPOSITORY }}:${{ steps.set-var.outputs.IMAGE_TAG }}
-
-      - name: Setup Kustomize
-        uses: imranismail/setup-kustomize@v1
-
-      - name: Checkout kustomize repository
-        uses: actions/checkout@v2
-        with:
-          repository: InTaewoo/cicd_config
-          ref: main
-          token: \${{ secrets.ACTION_TOKEN }}
-          path: cicd_config
-
-      - name: Update Kubernetes resources
-        run: |
-          echo \${{ steps.login-ecr.outputs.registry }}
-          echo \${{ steps.image-info.outputs.ecr_repository }}
-          echo \${{ steps.image-info.outputs.image_tag }}
-          cd cicd_config/overlays/dev/
-          kustomize edit set image \${{ steps.login-ecr.outputs.registry}}/\${{ steps.image-info.outputs.ecr_repository }}=\${{ steps.login-ecr.outputs.registry}}/\${{ steps.image-info.outputs.ecr_repository }}:\${{ steps.image-info.outputs.image_tag }}
-          cat kustomization.yaml
-
-      - name: Commit files
-        run: |
-          cd k8s-manifest-repo
-          git config --global user.email "InTaewoo@github.com"
-          git config --global user.name "Intaewoo"
-          git commit -am "Update image tag"
-          git push -u origin main
