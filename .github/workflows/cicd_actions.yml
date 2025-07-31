@@ -60,10 +60,6 @@ jobs:
         run: |
           docker push ${{ steps.image-info.outputs.ECR_REGISTRY }}/${{ steps.image-info.outputs.ECR_REPOSITORY }}:${{ steps.image-info.outputs.IMAGE_TAG }}
 
-  cd:
-    needs: [ci]
-    runs-on: ubuntu-latest
-    steps:   
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
 
