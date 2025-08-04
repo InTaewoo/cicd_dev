@@ -1,680 +1,1427 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>인태우_포트폴리오 </title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-	margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.highlight-default_background {
-	color: rgba(50, 48, 44, 1);
-}
-.highlight-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.highlight-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(115, 114, 110, 1);
-	fill: rgba(115, 114, 110, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(205, 60, 58, 1);
-	fill: rgba(205, 60, 58, 1);
-}
-.block-color-default_background {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray_background {
-	background: rgba(248, 248, 247, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(248, 243, 252, 1);
-}
-.block-color-pink_background {
-	background: rgba(252, 241, 246, 1);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
-.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
-.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
-.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
-.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
-.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
-.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
-.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
-.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
-.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="2459637f-4727-808d-bbcf-c872e23edc7d" class="page sans"><header><h1 class="page-title">인태우_포트폴리오 </h1><p class="page-description"></p></header><div class="page-body"><p id="2459637f-4727-81fe-9214-c2d0ef65f2b8" class=""><strong>KEY PROJECTS</strong></p><p id="2459637f-4727-814c-ab96-d7a9501ac9c6" class=""><strong>PORTFOLIO</strong></p><p id="2459637f-4727-81ee-9ec1-e2aebe189dfc" class="">안정적인 인프라 운영에 도전하는 인태우입니다.</p><p id="2459637f-4727-814b-a656-fa3a257a4778" class=""><strong>CONTACT</strong></p><p id="2459637f-4727-813f-8ece-cd2e032b577e" class="">010-8308-8050</p><p id="2459637f-4727-81fb-bb96-e7dcba2acd95" class="">oilehot0910@naver.com</p><p id="2459637f-4727-81dd-a13f-d124dc22e2b8" class="">01 <strong>INTRODUCTION</strong> 소개</p><p id="2459637f-4727-81f1-bab5-c05ae2a067ae" class="">02 <strong>CAREER SUMMARY</strong> 경력 요약03 <strong>KEY PROJECTS</strong></p><p id="2459637f-4727-8126-a331-dd019a48c019" class="">주요 프로젝트04 <strong>ADDITIONAL SKILLS</strong> 추가 역량05 <strong>EDUCATION</strong> 교육</p><p id="2459637f-4727-81ca-87ac-faad08fba491" class=""><strong>INTRODUCTION</strong></p><p id="2459637f-4727-8156-8bbf-d4ac58671414" class="">께 발전시켜 왔습니다.</p><p id="2459637f-4727-814f-ad9b-d347cd3a7eb7" class="">끊임없이 변화하는 기술 환경 속에서 새로운 도전을 즐기며, 지속적으로 역량을 확장해 나가는 데 열정을 가지고 있습니다. 이 포트폴리오에는 그간의경험과 기술적 성장을 담았습니다. 귀사와 함께 더욱 큰 성과를 만들어갈 수있기를 기대합니다.</p><figure id="2459637f-4727-8119-a0f5-ccff3e1b0f94" class="image"><a href="image/image1.png"/></a></figure><p id="2459637f-4727-8165-a198-d53b61c59c94" class="">IT 중견 기업에서 시스템 엔지니어로 커리어를 시작하며 전반적인 IT 기술</p><p id="2459637f-4727-816d-ab56-c62b6cdd16f0" class="">스택에 대한 탄탄한 이해를 갖추게 되었고, 현재는 온프레미스 및 클라우드</p><p id="2459637f-4727-8186-a65d-e0c7c72d7fbe" class="">환경에서 플랫폼을 설계하고 운영하는 역할을 수행하고 있습니다.</p><p id="2459637f-4727-815f-8532-cbc52c9553d1" class="">다양한 고객사의 인프라를 구축하고 플랫폼을 안정적으로 운영하는 과정에</p><p id="2459637f-4727-8172-9e7e-df97e8e360f5" class="">서, 기술적 전문성은 물론 원활한 커뮤니케이션 능력과 문제 해결 역량을 함</p><p id="2459637f-4727-8166-ad77-d5807999ebd3" class=""><strong>INFRA</strong> <strong>DEVOPS</strong> <strong>PASSION</strong></p><figure id="2459637f-4727-8126-877a-d37fe2b14ab6" class="image"><a href="image/image2.png"/></a></figure><p id="2459637f-4727-81be-8632-d7deacbc3468" class=""><strong>CAREER SUMMARY</strong></p><p id="2459637f-4727-815b-a990-c489584e38af" class=""><strong>데이타솔루션</strong></p><p id="2459637f-4727-8162-a9b0-ff6f6951c5b9" class=""><strong>2021년 11월 - 현재</strong></p><p id="2459637f-4727-81e5-a244-d958c130faf9" class=""><strong>AI 엔지니어팀 선임</strong></p><p id="2459637f-4727-81ba-94fa-eeea641e2e96" class=""><strong>주요 업무</strong> <strong>스킬</strong></p><ul id="2459637f-4727-8158-be7f-c1706aa71345" class="bulleted-list"><li style="list-style-type:disc">AI 플랫폼 구축 및 LLM Agent개발 프로젝트 참여 • Linux • Kubernetes</li></ul><ul id="2459637f-4727-81ee-b61e-c017d4dc92db" class="bulleted-list"><li style="list-style-type:disc">여러 고객사 AI 플랫폼 유지 보수 및 고도화 • Python • Openshift</li></ul><ul id="2459637f-4727-8112-944c-e024ec154469" class="bulleted-list"><li style="list-style-type:disc">사내 AI 플랫폼, 온프레미스 서버 관리 • Docker • Jenkins</li></ul><ul id="2459637f-4727-81ab-9ce6-d0d5ac660834" class="bulleted-list"><li style="list-style-type:disc">사내 AWS 인프라 관리 • AWS • Github Actions</li></ul><p id="2459637f-4727-815f-9c7f-f63cea1be4e7" class=""><strong>주요 성과</strong> <strong>프로젝트</strong></p><ul id="2459637f-4727-8156-8bd8-d6b5863e1450" class="bulleted-list"><li style="list-style-type:disc">AI 플랫폼 운영 및 유지 보수 사업 및 고도화 프로젝트 추진• AI 플랫폼을 이용한 Agent 개발 프로젝트 첫 사례</li></ul><p id="2459637f-4727-815f-b70f-f5b2971b6c57" class="">• Agent 도입 후 통계 솔루션을 사용 고객 만족도 90%이상 증가</p><ul id="2459637f-4727-8125-9b14-fa72dcdfff07" class="bulleted-list"><li style="list-style-type:disc">H사 클라우드 기반 플랫폼 구축 및 LLM Agent 개발 프로젝트• 사내 AI 플랫폼 구축 및 자사 통계 솔루션 Agent 개발 프로젝트• S사 개발 환경 개선 AI 플랫폼 구축 프로젝트</li></ul><p id="2459637f-4727-81ec-8b1d-cb68ebd735aa" class="">• CI/CD 파이프라인 구축 개인 프로젝트</p><p id="2459637f-4727-8163-8508-f4e2c13af7c5" class=""><strong>KEY PROJECTS 01</strong></p><figure id="2459637f-4727-8157-b68d-fd8f1e8ca9f3" class="image"><a href="image/image3.png"/></a></figure><p id="2459637f-4727-81dd-998b-cff821838c47" class=""><strong>클라우드 기반 AI 플랫폼 구축 및 LLM Agent 개발</strong></p><p id="2459637f-4727-81ef-8e75-e10d9391874f" class=""><strong>진행 목표</strong> <strong>Trouble Shooting</strong></p><p id="2459637f-4727-8123-9400-c34429b81c4a" class="">H사 고객들이 사용하는 고객사 홈페이지에 Agent 기능을 도</p><p id="2459637f-4727-8131-85e4-e32be8685be2" class="">입하여 업무 효율성 향상을 목표로 한 프로젝트 수행</p><p id="2459637f-4727-816d-81ee-ed517a8f30bf" class=""><strong>진행 과정</strong></p><figure id="2459637f-4727-817c-a521-fff1ca2018c0" class="image"><a href="image/image4.png"/></a></figure><p id="2459637f-4727-8156-988e-ef1cf130711e" class="">플랫폼 구축을 위한 AWS 인프라 설계</p><figure id="2459637f-4727-81c1-bf04-dc9e0012151d" class="image"><a href="image/image5.png"/></a></figure><p id="2459637f-4727-8111-b12b-cf71ff6f6990" class="">고객사 정책에 맞는 VPC에 EC2, S3, EKS, RDS 구축</p><figure id="2459637f-4727-81df-ac66-d31afdebaabb" class="image"><a href="image/image6.png"/></a></figure><p id="2459637f-4727-8189-872d-fcf03909c375" class="">CloudFormation Stack을 사용하여 플랫폼 구축 자동화</p><figure id="2459637f-4727-818d-b08d-f0c911868de1" class="image"><a href="image/image7.png"/></a></figure><p id="2459637f-4727-81c2-99fe-f1d154ab7cd4" class="">LLM 학습을 위한 데이터 수집 및 VectorDB 구축</p><figure id="2459637f-4727-817f-983d-c1a48bf64bee" class="image"><a href="image/image4.png"/></a></figure><p id="2459637f-4727-8191-bad5-c6c28b076040" class="">개발한 Agent를 빌드하여 ECR에 push한 후 EKS에 배포</p><figure id="2459637f-4727-8188-a84c-fec0b7f1450f" class="image"><a href="image/image8.png"/></a></figure><p id="2459637f-4727-8147-8828-f33078865e49" class="">여러 VPC에 AWS 서비스가 생성되어 상호 통신이 불가능한 상황 발생→ AWS Transit Gateway를 도입하여 모든 VPC 간 통신이 가능하도록 구성</p><figure id="2459637f-4727-819d-b39c-f6fa6b0b4793" class="image"><a href="image/image9.png"/></a></figure><p id="2459637f-4727-81dc-ab31-f0cf7692caed" class="">Qdrant VectorDB에서 CPU 자원 부족으로 처리 지연 및 컨테이너 종료 현상이 반복 발생</p><p id="2459637f-4727-8169-ab3d-e868c252ece4" class="">→ 단일 서버에 구성된 Qdrant를 AWS EKS 환경으로 이전하고, 오토스케일링을 적용하여 안정성 확보</p><figure id="2459637f-4727-8103-8fd7-c04a7810f725" class="image"><a href="image/image8.png"/></a></figure><p id="2459637f-4727-8163-9515-f8a3eb966195" class="">플랫폼 버전 업그레이드 후 플랫폼 실행 에러 발생</p><p id="2459637f-4727-81ff-a9cd-da49d658ac93" class="">→ AWS Fleet Manager를 통해 클러스터 내 디스크 및 메모리 부족 현상을 확인.</p><p id="2459637f-4727-81e2-8b69-f473b61c5c35" class="">추후 CloudWatch를 도입하여 AWS 서비스들을 모니터링 할 예정</p><p id="2459637f-4727-8122-830d-cc8a201f71e9" class=""><strong>담당업무</strong> <strong>성과</strong></p><figure id="2459637f-4727-817d-8436-e6930cbd7adf" class="image"><a href="image/image10.png"/></a></figure><p id="2459637f-4727-81a4-9b78-d6ebd10bb101" class="">고객사 인프라 담당자와 협업하여 AWS 인프라 설계</p><figure id="2459637f-4727-8189-bdf1-d05704789009" class="image"><a href="image/image11.png"/></a></figure><p id="2459637f-4727-81df-b392-e50219b8381c" class="">AWS 인프라 환경에 대한 이해와 다양한 AWS 서비스 적용 경험 보유</p><figure id="2459637f-4727-81bf-b482-c3abb53e04d7" class="image"><a href="image/image12.png"/></a></figure><p id="2459637f-4727-8103-9e29-f7b8f4093aff" class="">AWS 서비스 구축 및 AI 플랫폼 설치</p><figure id="2459637f-4727-8109-b773-fc3539b1ec91" class="image"><a href="image/image13.png"/></a></figure><p id="2459637f-4727-818c-bb8a-dbb1b0031a9c" class="">AI 플랫폼을 활용한 사내 LLM 프로젝트의 첫 번째 적용 사례 주도</p><figure id="2459637f-4727-81f9-a46b-ea93f82f6d64" class="image"><a href="image/image14.png"/></a></figure><p id="2459637f-4727-8172-9889-ce1b3026fabe" class="">외부 데이터 수집을 위한 크롤링 코드 개발 및 S3, RDS에 데이터 적재</p><figure id="2459637f-4727-8172-912c-df60582fe858" class="image"><a href="image/image15.png"/></a></figure><p id="2459637f-4727-819b-9bad-c8e4d5602baa" class="">정보 탐색이 어려웠던 고객사 홈페이지에서 사용자 만족도 향상 달성</p><figure id="2459637f-4727-81c9-a14b-e3ed5905c7aa" class="image"><a href="image/image16.png"/></a></figure><p id="2459637f-4727-8156-b5a1-cff422260e4c" class="">Qdrant VectorDB 및 Agent 이미지 EKS에 배포</p><figure id="2459637f-4727-81a6-8b11-fa55a8928f8a" class="image"><a href="image/image17.png"/></a></figure><p id="2459637f-4727-8189-8497-e1a5126481fa" class="">프로젝트 종료 후 운영 사업 및 플랫폼 고도화 프로젝트로 확장 추진</p><p id="2459637f-4727-81bd-9635-eb3ff3a75d79" class=""><strong>기여도</strong></p><p id="2459637f-4727-8170-97f7-ce8ba35a5bc4" class=""><strong>KEY PROJECTS 02</strong></p><figure id="2459637f-4727-8173-a7e5-f2c8d8c333a4" class="image"><a href="image/image3.png"/></a></figure><p id="2459637f-4727-81c2-8666-c428d66c8e1f" class=""><strong>AI 플랫폼 구축 및 통계 솔루션 Agent 개발</strong></p><p id="2459637f-4727-81e4-9391-e0e2e9eee5a2" class=""><strong>진행 목표</strong> <strong>Trouble Shooting</strong></p><p id="2459637f-4727-8120-80d3-eafb7d4fd008" class="">AI 플랫폼을 기반으로 한 Agent를 자사 통계 솔루션에 연동</p><p id="2459637f-4727-810b-bfcf-f94402fa81eb" class="">하여, 사용자의 데이터 분석 및 활용 편의성을 높이기 위한 프</p><p id="2459637f-4727-8151-be97-ec4d97eaac44" class="">로젝트를 기획하고 수행</p><p id="2459637f-4727-8121-80df-e9044beccc39" class=""><strong>진행 과정</strong></p><figure id="2459637f-4727-8153-a6d6-c692d3b6f479" class="image"><a href="image/image4.png"/></a></figure><p id="2459637f-4727-819d-90f1-d5f29b1a02bd" class="">Bare metal 서버 초기 환경 설정</p><figure id="2459637f-4727-8195-94ff-d38664fe5bff" class="image"><a href="image/image5.png"/></a></figure><p id="2459637f-4727-814f-a372-e87c5c27ec98" class="">Openshift 설치 및 플랫폼 설치</p><figure id="2459637f-4727-81c7-8140-e2027389ab70" class="image"><a href="image/image6.png"/></a></figure><p id="2459637f-4727-8178-abd2-f66e60c9fd5b" class="">GPU 노드를 추가하여 생성형 AI 모델 배포</p><figure id="2459637f-4727-81ef-b783-da062d17077c" class="image"><a href="image/image7.png"/></a></figure><p id="2459637f-4727-810e-a052-ec2a7d700226" class="">통계 솔루션에 적용할 Agent 모델 개발</p><figure id="2459637f-4727-8123-968d-f3179600d624" class="image"><a href="image/image4.png"/></a></figure><p id="2459637f-4727-81e1-b5bc-c0e3da715d6a" class="">AI 플랫폼과 개발자가 개발한 Agent를 연동</p><p id="2459637f-4727-81b1-8a5b-e6d3d64a7505" class=""><strong>담당업무</strong></p><figure id="2459637f-4727-81c8-a3b6-dceb4a7ad2e0" class="image"><a href="image/image10.png"/></a></figure><p id="2459637f-4727-81a5-8768-faeb9918c6e7" class="">온프레미스 인프라 설계 및 초기 환경 설정</p><figure id="2459637f-4727-8189-ba8d-f24b18a6a30a" class="image"><a href="image/image12.png"/></a></figure><p id="2459637f-4727-818d-a221-f790b0b676a1" class="">OpenShift 기반 AI 플랫폼 설치</p><figure id="2459637f-4727-8102-b0be-eea66fe7d196" class="image"><a href="image/image14.png"/></a></figure><p id="2459637f-4727-81f2-9c82-defd4984ac33" class="">GPU 노드 추가 및 MIG(Multi Instance GPU) 기능 구성</p><figure id="2459637f-4727-81bf-b431-d538fa4c94c0" class="image"><a href="image/image16.png"/></a></figure><p id="2459637f-4727-81d5-a87d-e7c43d6da84c" class="">플랫폼에 생성형 AI 모델 구축 및 개발된 Agent와의 연동</p><figure id="2459637f-4727-8180-9653-f933ca5726de" class="image"><a href="image/image18.png"/></a></figure><p id="2459637f-4727-8166-b784-d9ac45ebf9e1" class="">보유한 GPU는 1장이었으나, 플랫폼 설치 및 AI 모델에 2장의 GPU가 필요 → MIG(Multi Instance GPU) 기능을 활용해 GPU를 분할하여 용도에 맞게 사용</p><figure id="2459637f-4727-81b9-ac4b-d99441671760" class="image"><a href="image/image19.png"/></a></figure><p id="2459637f-4727-8178-9d7d-c8acbd83b388" class="">50개 이상의 Pod가 Pending 상태로, 플랫폼이 정상적으로 실행되지 않음→ Master/Worker 노드가 단일 노드로 구성되어 있었고, 노드당 최대 실행 가능한 Pod 수가 250개로 제한되어 있었음. kubelet 설정 파일에서 maxPods 값을조정하여 정상 실행 확인</p><p id="2459637f-4727-81a7-8842-c5cb4cd7aab8" class=""><strong>성과</strong></p><figure id="2459637f-4727-81cb-a114-fe7d2264fe10" class="image"><a href="image/image20.png"/></a></figure><p id="2459637f-4727-8119-8a2f-cd06d314d7f6" class="">Agent가 추가된 통계 솔루션의 판매량 30% 증가, 팀 내 최고 매출 달성</p><figure id="2459637f-4727-8171-9669-f684e23f4f08" class="image"><a href="image/image21.png"/></a></figure><p id="2459637f-4727-8144-bf14-f891dfeb6df5" class="">Agent 개발 이전 대비, 통계 솔루션 사용 고객의 만족도 90% 이상 증가</p><figure id="2459637f-4727-81f1-a46b-d27cbc1f6370" class="image"><a href="image/image22.png"/></a></figure><p id="2459637f-4727-814f-892e-ece16ce0c362" class="">월 2회 이상 고객사 방문 및 미팅을 통해 고객 유지율 상승</p><p id="2459637f-4727-817d-a6e4-e2b1c059e87d" class=""><strong>기여도</strong></p><p id="2459637f-4727-8150-b884-e7a492e78624" class=""><strong>KEY PROJECTS 03</strong></p><figure id="2459637f-4727-81e0-a56f-f715ec636ba3" class="image"><a href="image/image3.png"><img style="width:144px" src="image/image3.png"/></a></figure><p id="2459637f-4727-81dd-a626-f621d138e776" class=""><strong>Github Action &amp; ArgoCD 기반 CI/CD 파이프라인 구축</strong></p><p id="2459637f-4727-8119-b492-e75caa90933c" class=""><strong>진행 목표</strong> <strong>Trouble Shooting</strong></p><p id="2459637f-4727-819e-999b-d8038b2e4daa" class="">코드 수정 시 애플리케이션을 자동으로 빌드하고 배포하는파이프라인을 구성하여, 배포 시간 단축과 운영 안정성 향상</p><figure id="2459637f-4727-81a8-91bb-e638a6a3a7f1" class="image"><a href="image/image23.png"/></a></figure><p id="2459637f-4727-8196-b2aa-d57dc4188177" class="">수정한 코드를 push할 때 무한 반복되는 현상 발생</p><p id="2459637f-4727-8100-a9d1-cb3cc964d4f0" class="">→ checkout 단계를 추가하여 새로 생성되는 Repository가 아닌 지정된Repository로 push되도록 설정</p><figure id="2459637f-4727-8164-97c6-d58d06fc2a80" class="image"><a href="image/image23.png"/></a></figure><p id="2459637f-4727-81da-bd4b-f41e2eae1bd2" class="">이미지 Pull 권한 오류</p><p id="2459637f-4727-81ca-aa48-d10a2894a38f" class="">→ EKS가 아닌 일반 Kubenetes로 구축하여 ImagePullSecret이 필요했고,</p><p id="2459637f-4727-8174-95ce-dbc4c647eba9" class="">Secret을 생성하여 정상적으로 이미지 Pull 확인</p><p id="2459637f-4727-8125-9677-f64887f23a33" class=""><strong>진행 과정</strong></p><figure id="2459637f-4727-8189-850c-c6ab0360cbde" class="image"><a href="image/image24.png"/></a></figure><p id="2459637f-4727-81f8-ad93-e0b485df22d7" class="">Terraform을 이용한 AWS EC2 기반 Kubernetes 클러스터(K8s) 구축</p><figure id="2459637f-4727-810e-b3a4-cbbb5d7eae39" class="image"><a href="image/image23.png"/></a></figure><p id="2459637f-4727-81f4-9143-fca25b4ca303" class="">새로 빌드한 이미지로 서비스가 정상 실행이 안되는 현상</p><figure id="2459637f-4727-8162-85f4-c28245689ee1" class="image"><a href="image/image25.png"/></a></figure><p id="2459637f-4727-81bf-a13c-d8c6a6a4b1b9" class="">GitHub Actions를 활용한 CI/CD 파이프라인 설계 → Argocd Application을 생성할 때 사용한 namespace와 deployment</p><figure id="2459637f-4727-81a8-91c4-f9915bef3a75" class="image"><a href="image/image26.png"><img style="width:32px" src="image/image26.png"/></a></figure><p id="2459637f-4727-8157-808f-cd463b96110d" class="">코드 변경 시 애플리케이션 자동 빌드 및 테스트 환경 구성 namespace가 서로 달랐고 일치 시켜준 후 정상 실행</p><figure id="2459637f-4727-815e-8130-fb52fdbeceb9" class="image"><a href="image/image27.png"><img style="width:32px" src="image/image27.png"/></a></figure><p id="2459637f-4727-814f-b83d-f4dedf855172" class="">Docker 컨테이너 이미지 빌드 및 AWS ECR에 저장</p><figure id="2459637f-4727-81b4-af09-d2283c93b84a" class="image"><a href="image/image24.png"><img style="width:32px" src="image/image24.png"/></a></figure><p id="2459637f-4727-815a-939c-fa3f293d9aba" class="">Kubernetes 환경에서 Kustomize 및 ArgoCD를 이용한 자동 배포 구성</p><p id="2459637f-4727-81fe-8d80-c8d8f6bfefb6" class=""><strong>성과</strong></p><figure id="2459637f-4727-81b2-ac19-e7ba8a1f82eb" class="image"><a href="image/image28.png"/></a></figure><p id="2459637f-4727-8163-b118-d6d401cecd4d" class="">IaC를 통한 클라우드 인프라 자동화 역량 습득</p><figure id="2459637f-4727-8196-8259-da2b84004094" class="image"><a href="image/image29.png"/></a></figure><p id="2459637f-4727-815f-bb87-d20423ec69fd" class="">GitHub Actions 기반의 코드 커밋 → 빌드 → 배포 전체 파이프라인을 직</p><p id="2459637f-4727-811c-a11f-d052de37a9dc" class="">접 설계 및 구현하며 CI/CD 환경 구축 경험 확보</p><figure id="2459637f-4727-8157-9098-d2451e7f0c53" class="image"><a href="image/image30.png"><img style="width:32px" src="image/image30.png"/></a></figure><p id="2459637f-4727-81e8-bc80-c259ef65ddd8" class="">Kubernetes 운영과 Kustomize, ArgoCD 실무 활용 능력 향상</p><p id="2459637f-4727-81e4-886e-f89d4cc3f32d" class=""><strong>기여도</strong></p><figure id="2459637f-4727-8139-9da3-ebaeab00f99a" class="image"><a href="image/image31.png"><img style="width:700px" src="image/image31.png"/></a></figure><p id="2459637f-4727-814e-bbbf-f7095da1ccff" class=""><strong>ADDITIONAL SKILLS</strong></p><p id="2459637f-4727-81fc-aeeb-f9b7a31c7f03" class=""><strong>커뮤니케이션</strong> <strong>기술 습득력</strong></p><p id="2459637f-4727-81d9-87d9-fc98b83cf80f" class="">고객사와의 소통을 통해 니즈를 정확히 파악개발자와의 협업을 통해 공동 목표 달성</p><p id="2459637f-4727-8173-a5e7-fa1e5761d7cd" class="">팀원 간의 협업 및 코드 리뷰를 적극적으로 활용</p><p id="2459637f-4727-813e-b4cd-fb674414aab5" class="">정보 정리를 통해 기술을 효율적으로 학습학습 내용을 실습하고 실무에 적용</p><p id="2459637f-4727-818f-9e30-e76eba20b5fd" class="">호기심과 열정을 바탕으로 새로운 기술에 도전</p><p id="2459637f-4727-8110-ba61-d8a093ca80d5" class=""><strong>문제 해결 역량</strong> <strong>자기 주도적 활동</strong></p><p id="2459637f-4727-8104-8fa3-d6c322d2c76a" class="">고객사 실전 경험을 통해 문제 해결 역량 강화</p><p id="2459637f-4727-816f-8069-ee0f0e6e4fbd" class="">문제의 원인 분석, 해결, 기록화를 사이클로 정립구글링 및 공식 문서를 활용한 문제 해결 능력 보유</p><p id="2459637f-4727-814e-9726-ef8450988682" class="">끈기 있게 문제를 직접 해결하는 습관 형성</p><p id="2459637f-4727-8123-b3bd-e3bf8637143d" class="">새로운 기술 학습에 대한 지속적인 도전</p><p id="2459637f-4727-8100-946f-d016b83dc2ab" class="">꾸준한 자기계발을 통해 개인 역량 향상</p><figure id="2459637f-4727-8110-87b7-e7af1080637f" class="image"><a href="image/image32.png"><img style="width:700px" src="image/image32.png"/></a></figure><p id="2459637f-4727-8174-936b-f36e1a59f546" class=""><strong>EDUCATION</strong></p><p id="2459637f-4727-8143-940d-de613d655e58" class=""><strong>경기대학교</strong> <strong>교육</strong></p><p id="2459637f-4727-81cd-8099-fd059699066b" class=""><strong>2014년 3월 - 2021년 2월</strong></p><p id="2459637f-4727-8197-b40e-cc0e40db95c8" class=""><strong>응용정보통계학 학사</strong></p><p id="2459637f-4727-8178-be46-c026bdb50f47" class=""><strong>Kubernetes기반의 컨테이너오케스트레이션 - 2025.01 Jenkins 기반의 CI/CD 환경 구축 - 2023.06</strong></p><p id="2459637f-4727-8191-9e3a-f6df3736ecdc" class=""><strong>AWS Essential - 2023.03</strong></p><p id="2459637f-4727-815f-a196-dbb7fd005a7f" class=""><strong>데이터사이언스 &amp; 데이터엔지니어링 - 2021.05</strong></p><p id="2459637f-4727-8162-8e45-eac1809857c0" class=""><strong>자격증</strong> <strong>주소</strong></p><p id="2459637f-4727-8108-8ae9-c0eaa850489f" class=""><strong>CKA(Certified Kubernetes Administrator) AWS Certified Cloud Practitioner</strong></p><p id="2459637f-4727-8191-a055-f4e30c47edbb" class=""><strong>SQLD</strong></p><p id="2459637f-4727-8172-a8c9-edcb8d637c72" class=""><strong>Github - https://github.com/InTaewoo</strong></p><p id="2459637f-4727-8157-a43a-e8b21a0859f8" class=""><strong>인태우</strong></p><p id="2459637f-4727-81fc-aa3d-fdc9b564210c" class=""><strong>THANK YOU</strong></p><p id="2459637f-4727-81b8-8967-c19d20816491" class=""><strong>CONTACT</strong></p><p id="2459637f-4727-81a7-a5a1-cb3e23fb9ebb" class="">010-8308-8050</p><p id="2459637f-4727-8131-882f-c7418a9d62b6" class="">oilehot0910@naver.com</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>성장하는 IT 엔지니어 인태우 입니다.</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+          color: rgb(55, 53, 47);
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
+
+      a,
+      a.visited {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        padding-inline-start: 0;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .page-description {
+        margin-bottom: 2em;
+      }
+
+      .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+      }
+      .simple-table td {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table th {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+      }
+      .simple-table-header {
+        font-weight: 500;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji",
+          Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI Variable Display", "Segoe UI", Helvetica,
+          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol",
+          "Twemoji", "Noto Color Emoji", "Noto Sans CJK JP";
+      }
+      .pdf:lang(zh-CN) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI Variable Display", "Segoe UI", Helvetica,
+          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol",
+          "Twemoji", "Noto Color Emoji", "Noto Sans CJK SC";
+      }
+      .pdf:lang(zh-TW) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI Variable Display", "Segoe UI", Helvetica,
+          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol",
+          "Twemoji", "Noto Color Emoji", "Noto Sans CJK TC";
+      }
+      .pdf:lang(ko-KR) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI Variable Display", "Segoe UI", Helvetica,
+          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol",
+          "Twemoji", "Noto Color Emoji", "Noto Sans CJK KR";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .pdf .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK JP";
+      }
+      .pdf:lang(zh-CN) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK SC";
+      }
+      .pdf:lang(zh-TW) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK TC";
+      }
+      .pdf:lang(ko-KR) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK KR";
+      }
+      .pdf .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .highlight-default {
+        color: rgba(50, 48, 44, 1);
+      }
+      .highlight-gray {
+        color: rgba(115, 114, 110, 1);
+        fill: rgba(115, 114, 110, 1);
+      }
+      .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .highlight-red {
+        color: rgba(205, 60, 58, 1);
+        fill: rgba(205, 60, 58, 1);
+      }
+      .highlight-default_background {
+        color: rgba(50, 48, 44, 1);
+      }
+      .highlight-gray_background {
+        background: rgba(248, 248, 247, 1);
+      }
+      .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .highlight-purple_background {
+        background: rgba(248, 243, 252, 1);
+      }
+      .highlight-pink_background {
+        background: rgba(252, 241, 246, 1);
+      }
+      .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(115, 114, 110, 1);
+        fill: rgba(115, 114, 110, 1);
+      }
+      .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .block-color-red {
+        color: rgba(205, 60, 58, 1);
+        fill: rgba(205, 60, 58, 1);
+      }
+      .block-color-default_background {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray_background {
+        background: rgba(248, 248, 247, 1);
+      }
+      .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .block-color-purple_background {
+        background: rgba(248, 243, 252, 1);
+      }
+      .block-color-pink_background {
+        background: rgba(252, 241, 246, 1);
+      }
+      .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .select-value-color-default {
+        background-color: rgba(84, 72, 49, 0.08);
+      }
+      .select-value-color-gray {
+        background-color: rgba(84, 72, 49, 0.15);
+      }
+      .select-value-color-brown {
+        background-color: rgba(210, 162, 141, 0.35);
+      }
+      .select-value-color-orange {
+        background-color: rgba(224, 124, 57, 0.27);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(236, 191, 66, 0.39);
+      }
+      .select-value-color-green {
+        background-color: rgba(123, 183, 129, 0.27);
+      }
+      .select-value-color-blue {
+        background-color: rgba(93, 165, 206, 0.27);
+      }
+      .select-value-color-purple {
+        background-color: rgba(168, 129, 197, 0.27);
+      }
+      .select-value-color-pink {
+        background-color: rgba(225, 136, 179, 0.27);
+      }
+      .select-value-color-red {
+        background-color: rgba(244, 171, 159, 0.4);
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <article id="1069637f-4727-80c5-8d45-edaa5460edad" class="page sans">
+      <header>
+        <img
+          class="page-cover-image"
+          src="https://www.notion.so/images/page-cover/solid_beige.png"
+          style="object-position:center 40%"
+        />
+        <div class="page-header-icon page-header-icon-with-cover">
+          <span class="icon">👨🏻‍💻</span>
+        </div>
+        <h1 class="page-title">성장하는 IT 엔지니어 인태우 입니다.</h1>
+        <p class="page-description"></p>
+      </header>
+      <div class="page-body">
+        <p id="fff9637f-4727-8122-8fdb-dbc7c4413b50" class=""></p>
+        <div id="fff9637f-4727-81e9-989f-de51a011260c" class="column-list">
+          <div
+            id="fff9637f-4727-81fa-827e-e867a16bc8ff"
+            style="width:25%"
+            class="column"
+          >
+            <figure
+              id="fff9637f-4727-8102-9640-c75c405b704a"
+              class="image"
+            >
+              <a href="image/photo.jpg" /></a>
+            </figure>
+          </div>
+          <div
+            id="fff9637f-4727-8107-a93d-e46f8c01433a"
+            style="width:75%"
+            class="column"
+          >
+            <h2 id="fff9637f-4727-8195-9629-d11f5849de6d" class="">
+              안정적인 인프라 운영에 도전하는 인태우입니다.
+            </h2>
+            <p id="fff9637f-4727-81e1-9b07-f933999f7622" class=""></p>
+            <p id="2459637f-4727-80bf-b1fe-ee5d2cd3a913" class="">
+              IT 중견 기업에서 시스템 엔지니어로 커리어를 시작하며 전반적인 IT 기술 스택에
+              대한 탄탄한 이해를 갖추게 되었고, 현재는 온프레미스 및 클라우드 환경에서
+              플랫폼을 설계하고 운영하는 역할을 수행하고 있습니다.
+            </p>
+            <p id="2459637f-4727-8099-b7d7-fe0e8da4618a" class="">
+              다양한 고객사의 인프라를 구축하고 플랫폼을 안정적으로 운영하는 과정에서,
+              기술적 전문성은 물론 원활한 커뮤니케이션 능력과 문제 해결 역량을 함께 발전시켜
+              왔습니다.
+            </p>
+            <p id="2459637f-4727-80bc-966e-d1aa69b6700a" class="">
+              끊임없이 변화하는 기술 환경 속에서 새로운 도전을 즐기며, 지속적으로 역량을
+              확장해 나가는 데 열정을 가지고 있습니다. 이 포트폴리오에는 그간의 경험과
+              기술적 성장을 담았습니다. 귀사와 함께 더욱 큰 성과를 만들어갈 수 있기를
+              기대합니다.
+            </p>
+            <p id="1069637f-4727-8067-bec6-c220423ebe08" class=""></p>
+          </div>
+        </div>
+        <p id="fff9637f-4727-8151-bbb8-d631cee42155" class=""></p>
+        <h1 id="fff9637f-4727-81c6-8a33-e86bbd27ac9c" class="">
+          🔎 Profile
+        </h1>
+        <figure id="fff9637f-4727-8158-9360-cededba47044" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <p id="1069637f-4727-80fe-a95c-f827c06f2c3d" class=""></p>
+        <div id="fff9637f-4727-81ef-87de-f2ca1e135b39" class="column-list">
+          <div
+            id="fff9637f-4727-81c9-ba64-d4ad79a470e7"
+            style="width:43.75%"
+            class="column"
+          >
+            <h3 id="fff9637f-4727-81bf-b2d9-cad6244df908" class="">
+              경력
+              <mark class="highlight-gray">(총 3년 9개월)</mark>
+            </h3>
+            <p id="fff9637f-4727-8169-9b44-d1bd7d82e117" class="">
+              데이타솔루션
+              <mark class="highlight-gray">2021.11 - 현재</mark>
+            </p>
+            <ul id="2459637f-4727-80e7-a5e9-c23fce282369" class="bulleted-list">
+              <li style="list-style-type:disc">
+                AI 플랫폼 구축 및 LLM Agent 개발 프로젝트 참여
+              </li>
+            </ul>
+            <ul id="2459637f-4727-80c7-96d4-f4cb35327e8f" class="bulleted-list">
+              <li style="list-style-type:disc">고객사 AI 플랫폼 유지 보수 및 고도화</li>
+            </ul>
+            <ul id="2459637f-4727-80ac-9438-c8206ca3222e" class="bulleted-list">
+              <li style="list-style-type:disc">사내 AI 플랫폼 운영 및 온프레미스 서버 관리</li>
+            </ul>
+            <ul id="2459637f-4727-8008-8d87-e5e09350c34e" class="bulleted-list">
+              <li style="list-style-type:disc">사내 AWS 클라우드 관리</li>
+            </ul>
+            <p id="fff9637f-4727-811c-94cc-ea03790b9ab4" class=""></p>
+          </div>
+          <div
+            id="fff9637f-4727-816f-8774-c631964cfec9"
+            style="width:56.25%"
+            class="column"
+          >
+            <h3 id="fff9637f-4727-81d3-b548-cf7511fcbd09" class="">
+              학력
+            </h3>
+            <p id="fff9637f-4727-81aa-9aca-cf72b88b8b0c" class="">
+              경기대학교/응용통계학과
+              <mark class="highlight-gray">2014.3 - 2021.02</mark>
+            </p>
+            <h3 id="fff9637f-4727-8171-bbe5-dcf30cc1b6bc" class="">
+              자격증
+            </h3>
+            <ul id="fff9637f-4727-81ee-ac9e-f7b1ddeac5df" class="bulleted-list">
+              <li style="list-style-type:disc">
+                CKA(CertifiedKubernetesAdministrator) 2022.07
+              </li>
+            </ul>
+            <ul id="1069637f-4727-8044-a0fc-c49f6290c8a7" class="bulleted-list">
+              <li style="list-style-type:disc">
+                AWS Certified Cloud Practitioner 2022.03
+              </li>
+            </ul>
+            <ul id="bc93169b-1409-4180-8789-54397c3d7177" class="bulleted-list">
+              <li style="list-style-type:disc">SQLD 2021.06</li>
+            </ul>
+            <p id="3fd07f33-6cad-4811-a759-59d6f2dfde26" class=""></p>
+          </div>
+        </div>
+        <h1 id="1219637f-4727-803c-903d-fd2e517f9f18" class="">
+          🎖️ 주요 성과
+        </h1>
+        <p id="2459637f-4727-801e-b533-d625087b5390" class=""></p>
+        <figure id="1219637f-4727-80d5-8957-cca024537fdb" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <h2 id="1219637f-4727-8059-b981-ce7589717cba" class="">
+          ✔️ H사 AI 플랫폼 운영 및 유지 보수 사업 및 고도화 프로젝트 추진
+        </h2>
+        <p id="1219637f-4727-80ec-8437-dc19565a5bea" class=""></p>
+        <h2 id="1219637f-4727-800b-a352-f5200303a0c7" class="">
+          ✔️ H사 AI 플랫폼을 이용한 Agent 개발 프로젝트 첫 사례
+        </h2>
+        <p id="2459637f-4727-80d0-ac0b-c52b0e0f6907" class=""></p>
+        <h2 id="1219637f-4727-805b-8ae7-fe06998ca3ab" class="">
+          ✔️ S사 AI 플랫폼 도입 후 생성형 AI 플랫폼 도입 및 장기 유지 보수 계약
+          체결
+        </h2>
+        <p id="2459637f-4727-80c2-944e-fc8d29c33a9d" class=""></p>
+        <h2 id="1219637f-4727-80d4-9a9a-c2f17e719ea0" class="">
+          ✔️<strong> 자사 솔루션 Agent 도입 후 통계 솔루션을 고객 만족도 90%이상 증가</strong>
+        </h2>
+        <p id="1229637f-4727-8060-8c84-d9aff8f58233" class=""></p>
+        <h1 id="fff9637f-4727-81f6-aeb3-f052ff34dbbe" class="">
+          ⚒️ Skills
+        </h1>
+        <figure id="fff9637f-4727-819b-bbd1-d11928ac02b0" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <p id="fff9637f-4727-8141-9c19-cdf92a576390" class="">
+          역량의 전문성에 따라<strong> </strong
+          ><mark class="highlight-blue"><strong>상 </strong></mark
+          ><strong>· </strong
+          ><mark class="highlight-yellow"><strong>중 · </strong></mark
+          ><mark class="highlight-red"><strong>하</strong></mark
+          ><mark class="highlight-red"> </mark
+          >수준으로 분류하였습니다.
+        </p>
+        <div id="fff9637f-4727-819f-9d3c-fc4d85bf8d45" class="column-list">
+          <div
+            id="fff9637f-4727-818c-a076-c9f5e5b1dc35"
+            style="width:58.33333333333333%"
+            class="column"
+          >
+            <p id="fff9637f-4727-81e5-a812-d374cc670c85" class="">
+              <strong>Hard Skills</strong>
+            </p>
+            <ul id="fff9637f-4727-8170-adb9-ca9aafafbdac" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-orange">Kubernetes</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="f900060c-6e6a-41f5-818d-0a92d90164c1" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-orange">Docker</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="1069637f-4727-80b5-96b4-f3eaa636a825" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-orange">Python</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="1069637f-4727-8007-95c5-c954844c9f28" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-orange">SQL</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="1069637f-4727-8044-a6ec-f6188a7557ba" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-red">AWS</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="dc1d7c32-fd26-4980-953d-2f429e623198" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-red">Github Actions</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <p id="1069637f-4727-80de-92a2-db8837809f57" class=""></p>
+            <p id="1069637f-4727-806b-9aff-c9ad964c1c32" class=""></p>
+          </div>
+          <div
+            id="fff9637f-4727-816d-920f-da663f6d205b"
+            style="width:29.166666666666664%"
+            class="column"
+          >
+            <p id="fff9637f-4727-815a-a83e-cb3e34baf606" class="">
+              <strong>Soft Skills</strong>
+            </p>
+            <ul id="fff9637f-4727-81d9-9077-d2c8c854bcf4" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-blue">커뮤니케이션</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="fff9637f-4727-81c9-8c8f-f87825cd0e1d" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-blue">끈기</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="fff9637f-4727-8106-ba0e-ca049f913256" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-yellow">리더십</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <ul id="fff9637f-4727-811f-b6b7-c5dd4def0b81" class="toggle">
+              <li>
+                <details open="">
+                  <summary><mark class="highlight-yellow">스케줄링</mark></summary>
+                </details>
+              </li>
+            </ul>
+            <p id="1069637f-4727-80ed-b0c6-d4ebd968a88c" class=""></p>
+          </div>
+          <div
+            id="fff9637f-4727-816d-a476-e997448856be"
+            style="width:12.50000000000004%"
+            class="column"
+          >
+            <p id="fff9637f-4727-817c-b1f2-ca37a1f1453c" class=""></p>
+          </div>
+        </div>
+        <h1 id="fff9637f-4727-8176-a5b1-f3a491bf7bab" class="">
+          👩🏻‍💻 Projects
+        </h1>
+        <figure id="fff9637f-4727-81c5-a0c2-dc76aa218aa6" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <p id="fff9637f-4727-81bc-8b76-f16207babb75" class="">
+          담당한 프로젝트를 최신순으로 구성했습니다.
+        </p>
+        <h2 id="1069637f-4727-800e-bbba-f67567027f0c" class="">
+          1. <strong>클라우드 기반 AI 플랫폼 구축 및 LLM Agent 개발 </strong>
+        </h2>
+        <ul id="10a9637f-4727-80b9-bb9e-f85d8dff31e4" class="bulleted-list">
+          <li style="list-style-type:disc">
+            하이브리드 클라우드 환경에서 AI 플랫폼 구축과 고객사 홈페이지 Agent 개발
+          </li>
+        </ul>
+        <p id="2459637f-4727-8015-9806-c6f4ac59a254" class=""></p>
+        <p id="10a9637f-4727-80af-9c32-df70dd69ea6f" class="">
+          ✅ <strong>진행 과정</strong>
+        </p>
+        <ul id="2459637f-4727-8009-849d-dcec6dc08aa1" class="bulleted-list">
+          <li style="list-style-type:disc">플랫폼 구축을 위한 AWS 인프라 설계</li>
+        </ul>
+        <ul id="2459637f-4727-800c-83fe-f3e30fd91df3" class="bulleted-list">
+          <li style="list-style-type:disc">고객사 정책에 맞는 VPC에 EC2, S3, EKS, RDS 구축</li>
+        </ul>
+        <ul id="2459637f-4727-8080-b7e3-fe5bba627b4c" class="bulleted-list">
+          <li style="list-style-type:disc">CloudFormation Stack을 사용하여 플랫폼 구축 자동화</li>
+        </ul>
+        <ul id="2459637f-4727-80aa-af62-fdeca2b9ea16" class="bulleted-list">
+          <li style="list-style-type:disc">LLM 학습을 위한 데이터 수집 및 VectorDB 구축</li>
+        </ul>
+        <ul id="2459637f-4727-80ee-8d7a-e1a69aba7271" class="bulleted-list">
+          <li style="list-style-type:disc">
+            개발한 Agent를 빌드하여 ECR에 push한 후 EKS에 배포
+          </li>
+        </ul>
+        <p id="2459637f-4727-80f7-be19-e75bd1be489d" class=""></p>
+        <p id="10a9637f-4727-8094-862d-f662e0698152" class="">
+          ✅  <strong>담당 업무</strong>
+        </p>
+        <ul id="2459637f-4727-80c1-96d9-ffc9d5547c97" class="bulleted-list">
+          <li style="list-style-type:disc">고객사 인프라 담당자와 협업하여 AWS 인프라 설계</li>
+        </ul>
+        <ul id="2459637f-4727-8078-b69b-eaf6af02c153" class="bulleted-list">
+          <li style="list-style-type:disc">AWS 서비스 구축 및 AI 플랫폼 설치</li>
+        </ul>
+        <ul id="2459637f-4727-804c-bbdb-d2f450be7e96" class="bulleted-list">
+          <li style="list-style-type:disc">
+            외부 데이터 수집을 위한 크롤링 코드 개발 및 S3, RDS에 데이터 적재
+          </li>
+        </ul>
+        <ul id="2459637f-4727-8088-ad82-f5e0d8b16f74" class="bulleted-list">
+          <li style="list-style-type:disc">Qdrant VectorDB 및 Agent 이미지 EKS에 배포</li>
+        </ul>
+        <p id="1ad9637f-4727-809a-be50-f16cbeaf0e5b" class=""></p>
+        <p id="10a9637f-4727-8091-9439-efb4e934edbc" class="">
+          ✅ <strong>Trouble Shooting</strong>
+        </p>
+        <ul id="2459637f-4727-80be-8489-c39b0d3315fc" class="bulleted-list">
+          <li style="list-style-type:disc">
+            여러 VPC에 AWS 서비스가 생성되어 상호 통신이 불가능한 상황 발생
+          </li>
+        </ul>
+        <p id="2459637f-4727-8013-9c45-e77b94e2bd4b" class="">
+          → AWS Transit Gateway를 도입하여 모든 VPC 간 통신이 가능하도록 구성
+        </p>
+        <p id="2459637f-4727-809c-a427-f1ffe79035d8" class=""></p>
+        <ul id="2459637f-4727-8089-8a40-c6b1ad05b690" class="bulleted-list">
+          <li style="list-style-type:disc">
+            Qdrant VectorDB에서 CPU 자원 부족으로 처리 지연 및 컨테이너 종료 현상이
+            반복 발생
+          </li>
+        </ul>
+        <p id="2459637f-4727-8079-b507-fe279dc27205" class="">
+          → 단일 서버에 구성된 Qdrant를 AWS EKS 환경으로 이전하고, 오토스케일링을
+          적용하여 안정성 확보
+        </p>
+        <p id="2459637f-4727-80b9-8a85-ca5866e59043" class=""></p>
+        <ul id="2459637f-4727-80b0-a2be-d30cb4088dc4" class="bulleted-list">
+          <li style="list-style-type:disc">플랫폼 버전 업그레이드 후 플랫폼 실행 에러 발생</li>
+        </ul>
+        <p id="2459637f-4727-806b-ba01-e03f3a049a64" class="">
+          → AWS Fleet Manager를 통해 클러스터 내 디스크 및 메모리 부족 현상을 확인.
+          추후 CloudWatch를 도입하여 AWS 서비스들을 모니터링 할 예정
+        </p>
+        <p id="10a9637f-4727-809e-9f2d-e7ee1cffbdc6" class=""></p>
+        <p id="10a9637f-4727-800e-9390-cbe7685c0b0a" class="">
+          ✅ <strong>성과</strong>
+        </p>
+        <ul id="2459637f-4727-805e-8e81-ddbf8b078573" class="bulleted-list">
+          <li style="list-style-type:disc">AWS 인프라 환경에 대한 이해와 다양한 AWS 서비스 적용 경험 보유</li>
+        </ul>
+        <ul id="2459637f-4727-8090-af00-c06885b70683" class="bulleted-list">
+          <li style="list-style-type:disc">
+            AI 플랫폼을 활용한 사내 LLM 프로젝트의 첫 번째 적용 사례 주도
+          </li>
+        </ul>
+        <ul id="2459637f-4727-806f-8130-e49f157236c4" class="bulleted-list">
+          <li style="list-style-type:disc">
+            정보 탐색이 어려웠던 고객사 홈페이지에서 사용자 만족도 향상 달성
+          </li>
+        </ul>
+        <ul id="2459637f-4727-80b8-ba4a-ed48347ec5dc" class="bulleted-list">
+          <li style="list-style-type:disc">
+            프로젝트 종료 후 운영 사업 및 플랫폼 고도화 프로젝트로 확장 추진
+          </li>
+        </ul>
+        <p id="10a9637f-4727-8070-b081-f23e1dc8d8cd" class=""></p>
+        <p id="10a9637f-4727-8066-a110-eb23071ae186" class="">
+          ✅ <strong>시기</strong>
+        </p>
+        <ul id="10a9637f-4727-80d2-9a97-e44818e18e32" class="bulleted-list">
+          <li style="list-style-type:disc">2025.03 ~ 진행중</li>
+        </ul>
+        <p id="2459637f-4727-80ba-885b-e830c4a5e7ce" class=""></p>
+        <h2 id="1069637f-4727-8065-9a67-dad39655760d" class="">
+          2. Github Action &amp; ArgoCD 기반 CI/CD 파이프라인 구축
+        </h2>
+        <ul id="2459637f-4727-80fa-ab48-fe9c841c1da9" class="bulleted-list">
+          <li style="list-style-type:disc">
+            코드 수정 시 애플리케이션을 자동으로 빌드하고 배포하는 파이프라인을
+            구성하여, 배포 시간 단축과 운영 안정성 향상
+          </li>
+        </ul>
+        <p id="2459637f-4727-8087-97cf-df941b7e7348" class=""></p>
+        <p id="2459637f-4727-80ef-a816-ebc267ee129a" class="">
+          ✅ <strong>진행 과정</strong>
+        </p>
+        <ul id="2459637f-4727-80c4-9d4f-d68d024ba675" class="bulleted-list">
+          <li style="list-style-type:disc">
+            Terraform을 이용한 AWS EC2 기반 Kubernetes 클러스터(K8s) 구축
+          </li>
+        </ul>
+        <ul id="2459637f-4727-8033-bf2e-f7133df8382e" class="bulleted-list">
+          <li style="list-style-type:disc">GitHub Actions를 활용한 CI/CD 파이프라인 설계</li>
+        </ul>
+        <ul id="2459637f-4727-8053-ac61-dafde8a303e4" class="bulleted-list">
+          <li style="list-style-type:disc">코드 변경 시 애플리케이션 자동 빌드 및 테스트 환경 구성</li>
+        </ul>
+        <ul id="2459637f-4727-8065-bd5d-f95075f6e019" class="bulleted-list">
+          <li style="list-style-type:disc">Docker 컨테이너 이미지 빌드 및 AWS ECR에 저장</li>
+        </ul>
+        <ul id="2459637f-4727-8023-8927-db830c2769e1" class="bulleted-list">
+          <li style="list-style-type:disc">
+            Kubernetes 환경에서 Kustomize 및 ArgoCD를 이용한 자동 배포 구성
+          </li>
+        </ul>
+        <p id="2459637f-4727-808c-a247-e1c16cc16792" class=""></p>
+        <p id="2459637f-4727-8057-bf30-ee1034d6db8c" class="">
+          ✅ <strong>Trouble Shooting</strong>
+        </p>
+        <ul id="2459637f-4727-807f-8422-f81be0332c39" class="bulleted-list">
+          <li style="list-style-type:disc">수정한 코드를 push할 때 무한 반복되는 현상 발생</li>
+        </ul>
+        <p id="2459637f-4727-804f-8e68-d64d24d45c00" class="">
+          → checkout 단계를 추가하여 새로 생성되는 Repository가 아닌 지정된 Repository로
+          push되도록 설정
+        </p>
+        <p id="2459637f-4727-80bc-9f41-d4aeeb38db0b" class=""></p>
+        <ul id="2459637f-4727-80e5-abbc-cf2b916ebbe6" class="bulleted-list">
+          <li style="list-style-type:disc">이미지 Pull 권한 오류</li>
+        </ul>
+        <p id="2459637f-4727-80f7-a44a-ed01ffefbf33" class="">
+          → EKS가 아닌 일반 Kubenetes로 구축하여 ImagePullSecret이 필요했고, Secret을
+          생성하여 정상적으로 이미지 Pull 확인
+        </p>
+        <p id="2459637f-4727-806f-bf88-e6b83ac2c9e1" class=""></p>
+        <ul id="2459637f-4727-8077-84cc-e7e5c9659ef9" class="bulleted-list">
+          <li style="list-style-type:disc">새로 빌드한 이미지로 서비스가 정상 실행이 안되는 현상</li>
+        </ul>
+        <p id="2459637f-4727-8038-a663-d4e674254c32" class="">
+          →  Argocd Application을 생성할 때 사용한 namespace와 deployment namespace가
+          서로 달랐고 일치 시켜준 후 정상 실행
+        </p>
+        <p id="2459637f-4727-80bc-bb66-f6d8e0bcffee" class=""></p>
+        <p id="2459637f-4727-80ac-9ec4-f91f41d72ca3" class="">
+          ✅ <strong>성과</strong>
+        </p>
+        <ul id="2459637f-4727-800b-b440-d742447553ee" class="bulleted-list">
+          <li style="list-style-type:disc">IaC를 통한 클라우드 인프라 자동화 역량 습득</li>
+        </ul>
+        <ul id="2459637f-4727-806a-aff5-fdc216c22476" class="bulleted-list">
+          <li style="list-style-type:disc">
+            GitHub Actions 기반의 코드 커밋 → 빌드 → 배포 전체 파이프라인을 직접 설계 및
+            구현하며 CI/CD 환경 구축 경험 확보
+          </li>
+        </ul>
+        <ul id="2459637f-4727-809c-9a02-d0582712253d" class="bulleted-list">
+          <li style="list-style-type:disc">Kubernetes 운영과 Kustomize, ArgoCD 실무 활용 능력 향상</li>
+        </ul>
+        <p id="2459637f-4727-80fa-93e0-e61d68a4ef91" class=""></p>
+        <p id="2459637f-4727-803c-842d-e872ba2f1fe8" class="">
+          <strong>시기</strong>
+        </p>
+        <ul id="2459637f-4727-8025-ab7e-f8a6576e3011" class="bulleted-list">
+          <li style="list-style-type:disc">2024.10 ~ 2024.12</li>
+        </ul>
+        <p id="2459637f-4727-80b5-9ce5-cfc8893ed965" class=""></p>
+        <h2 id="a430db98-1141-45ee-99f5-b3234a894c5d" class="">
+          3.  <strong>AI 플랫폼 구축 및 자사 통계 솔루션 Agent 개발</strong>
+        </h2>
+        <ul id="480c1e11-65c5-4ca2-ac0d-14b9139af670" class="bulleted-list">
+          <li style="list-style-type:disc">
+            AI 플랫폼을 기반으로 한 Agent를 자사 통계 솔루션에 연동하여, 사용자의 데이터
+            분석 및 활용 편의성을 높이기 위한 프로젝트를 기획하고 수행
+          </li>
+        </ul>
+        <p id="1069637f-4727-8091-9d04-dbc9f9ad98b9" class=""></p>
+        <p id="e4b800c6-e5a2-431b-bc41-efbb4cf28b31" class="">
+          ✅ <strong>진행 과정</strong>
+        </p>
+        <ul id="2459637f-4727-80e1-ac6a-fcecdca833aa" class="bulleted-list">
+          <li style="list-style-type:disc">Bare metal 서버 초기 환경 설정</li>
+        </ul>
+        <ul id="2459637f-4727-80ca-b6ac-d78c16f0b65d" class="bulleted-list">
+          <li style="list-style-type:disc">Openshift 설치 및 플랫폼 설치</li>
+        </ul>
+        <ul id="2459637f-4727-80e7-817e-fad3d1468496" class="bulleted-list">
+          <li style="list-style-type:disc">GPU 노드를 추가하여 생성형 AI 모델 배포</li>
+        </ul>
+        <ul id="2459637f-4727-804b-92c4-d68af44ee77e" class="bulleted-list">
+          <li style="list-style-type:disc">통계 솔루션에 적용할 Agent 모델 개발</li>
+        </ul>
+        <ul id="2459637f-4727-80df-a072-ebf755358b46" class="bulleted-list">
+          <li style="list-style-type:disc">AI 플랫폼과 개발자가 개발한 Agent를 연동</li>
+        </ul>
+        <p id="1219637f-4727-8012-808f-f01f1b083480" class=""></p>
+        <p id="2f9724ce-0076-4d15-be23-8cc3aafb0e4a" class="">
+          ✅ <strong>담당 업무</strong>
+        </p>
+        <ul id="2459637f-4727-800a-9554-c9199c7a1a10" class="bulleted-list">
+          <li style="list-style-type:disc">온프레미스 인프라 설계 및 초기 환경 설정</li>
+        </ul>
+        <ul id="2459637f-4727-80f4-a33f-e9db85ef16d2" class="bulleted-list">
+          <li style="list-style-type:disc">OpenShift 기반 AI 플랫폼 설치</li>
+        </ul>
+        <ul id="2459637f-4727-804f-8eab-d32545f2b2e1" class="bulleted-list">
+          <li style="list-style-type:disc">GPU 노드 추가 및 MIG(Multi Instance GPU) 기능 구성</li>
+        </ul>
+        <ul id="2459637f-4727-8047-9152-d0dcd55e9ad6" class="bulleted-list">
+          <li style="list-style-type:disc">플랫폼에 생성형 AI 모델 구축 및 개발된 Agent와의 연동</li>
+        </ul>
+        <p id="2459637f-4727-80b8-8aaa-e6749f885712" class=""></p>
+        <p id="6cd7f21f-63c6-4659-bd0e-978ee4d21fe7" class="">
+          ✅ <strong>Trouble Shooting</strong>
+        </p>
+        <ul id="2459637f-4727-8023-9c8f-dc7b07412c23" class="bulleted-list">
+          <li style="list-style-type:disc">
+            보유한 GPU는 1장이었으나, 플랫폼 설치 및 AI 모델에 2장의 GPU가 필요
+          </li>
+        </ul>
+        <p id="2459637f-4727-80f5-99b7-d94a71ccfa68" class="">
+          → MIG(Multi Instance GPU) 기능을 활용해 GPU를 분할하여 용도에 맞게 사용
+        </p>
+        <p id="2459637f-4727-808a-a282-edd69ff90ff0" class=""></p>
+        <ul id="2459637f-4727-80ec-aa73-d8c24b334332" class="bulleted-list">
+          <li style="list-style-type:disc">
+            50개 이상의 Pod가 Pending 상태로, 플랫폼이 정상적으로 실행되지 않음
+          </li>
+        </ul>
+        <p id="2459637f-4727-8037-b0db-e35cef7d4151" class="">
+          →  Master/Worker 노드가 단일 노드로 구성되어 있었고, 노드당 최대 실행 가능한
+          Pod 수가 250개로 제한되어 있었음. kubelet 설정 파일에서 maxPods 값을 조정하여
+          정상 실행 확인
+        </p>
+        <p id="2459637f-4727-80f0-acea-dfe2a335e609" class=""></p>
+        <p id="1069637f-4727-80c2-b4ed-e04f80317a74" class="">
+          ✅ <strong>성과</strong>
+        </p>
+        <ul id="2459637f-4727-80ff-837e-fe62eccb8d27" class="bulleted-list">
+          <li style="list-style-type:disc">
+            Agent가 추가된 통계 솔루션의 판매량 30% 증가, 팀 내 최고 매출 달성
+          </li>
+        </ul>
+        <ul id="2459637f-4727-803d-a842-f80083c8e072" class="bulleted-list">
+          <li style="list-style-type:disc">
+            Agent 개발 이전 대비, 통계 솔루션 사용 고객의 만족도 90% 이상 증가
+          </li>
+        </ul>
+        <ul id="2459637f-4727-8068-b412-eb17cce42982" class="bulleted-list">
+          <li style="list-style-type:disc">
+            월 2회 이상 고객사 방문 및 미팅을 통해 고객 유지율 상승
+          </li>
+        </ul>
+        <p id="cfdffda4-9c5d-4a2c-85cc-8ce8df9396b5" class=""></p>
+        <p id="1069637f-4727-8033-9934-d84cdf6dacde" class="">
+          ✅ <strong>시기</strong>
+        </p>
+        <ul id="1069637f-4727-80e3-9360-dc7efdcec886" class="bulleted-list">
+          <li style="list-style-type:disc">2024.04 ~ 2024.10</li>
+        </ul>
+        <p id="1069637f-4727-80be-bb53-f29b74ec46a7" class=""></p>
+        <p id="1219637f-4727-8058-94ca-df2d9217d5ff" class=""></p>
+        <h1 id="fff9637f-4727-811b-b8c5-c2e9184f3940" class="">
+          💫 About me
+        </h1>
+        <figure id="fff9637f-4727-8119-9ef6-c042777e540c" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <div id="fff9637f-4727-813e-ac1a-dc57a814b1fd" class="column-list">
+          <div
+            id="fff9637f-4727-8142-82fa-e3e74cdf8224"
+            style="width:50%"
+            class="column"
+          >
+            <ul id="fff9637f-4727-81f4-8212-f47ec00f0f9d" class="bulleted-list">
+              <li style="list-style-type:disc">
+                Github
+                <figure id="1069637f-4727-806a-b06c-e82966379d29">
+                  <a
+                    href="https://github.com/InTaewoo"
+                    class="bookmark source"
+                  >
+                    <div class="bookmark-info">
+                      <div class="bookmark-text">
+                        <div class="bookmark-title">InTaewoo - Overview</div>
+                        <div class="bookmark-description">
+                          Hello 👋 I am working as an engineer at Data Solution -
+                          InTaewoo
+                        </div>
+                      </div>
+                      <div class="bookmark-href">
+                        <img
+                          src="https://github.com/fluidicon.png"
+                          class="icon bookmark-icon"
+                        />https://github.com/InTaewoo
+                      </div>
+                    </div>
+                    <img
+                      src="https://avatars.githubusercontent.com/u/81672260?v=4?s=400"
+                      class="bookmark-image"
+                    />
+                  </a>
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <div
+            id="fff9637f-4727-8135-b4d9-d178217edfb0"
+            style="width:50%"
+            class="column"
+          >
+            <p id="fff9637f-4727-815e-9ec6-c77abb0b0eae" class=""></p>
+          </div>
+        </div>
+        <ul id="fff9637f-4727-818a-b0cf-efa2e74ab821" class="bulleted-list">
+          <li style="list-style-type:disc">
+            CI/CD 파이프라인 구축 개인 프로젝트를 통한 포트폴리오
+          </li>
+        </ul>
+        <p id="2459637f-4727-80a2-b95c-e75db8a33540" class="">
+          <a href="http://43.200.111.225:30685/">http://43.200.111.225:30685/</a>
+        </p>
+        <h1 id="fff9637f-4727-8120-8e3d-d4ef8d6a5a8f" class="">
+          👋 Contact
+        </h1>
+        <figure id="fff9637f-4727-8137-a0da-feb7a74241cc" class="image">
+          <a href="image/Line_1.png"
+            ><img style="width:706.5px" src="image/Line_1.png"
+          /></a>
+        </figure>
+        <p id="fff9637f-4727-8135-bc40-f2fede227eb2" class="">
+          ✉️ <a href="mailto:oilehot0910@gmail.com">oilehot0910@gmail.com</a>
+          📱<mark class="highlight-gray">+82 10-8308-8050   🏠 서울 양천구</mark>
+        </p>
+        <p id="fff9637f-4727-8127-97cf-c3db44a95a89" class=""></p>
+        <p id="fff9637f-4727-8115-9c42-c39c22c26121" class=""></p>
+        <p id="fff9637f-4727-81ff-b539-ccf5dff46432" class=""></p>
+        <p id="fff9637f-4727-8101-8051-c2a33f3afdf7" class=""></p>
+      </div>
+    </article>
+    <span class="sans" style="font-size:14px;padding-top:2em"></span>
+  </body>
+</html>
+
